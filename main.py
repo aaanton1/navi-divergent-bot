@@ -30,7 +30,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.effective_message
     if not msg:
         return
+    # Отвечаем "Принял" только в личке с ботом, чтобы не спамить в группах
+    chat and chat.type == "private":
     await msg.reply_text("Принял ✅")
+
 
     chat = update.effective_chat
     user = update.effective_user
