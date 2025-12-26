@@ -30,7 +30,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.effective_message
     if not msg:
         return
-await update.message.reply_text("Принял ✅")
+await msg.reply_text("Принял ✅")
 
     chat = update.effective_chat
     user = update.effective_user
